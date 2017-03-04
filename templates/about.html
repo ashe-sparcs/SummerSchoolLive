@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% block title %}
+    About KAIST Summer School
+{% endblock title %}
+{% block stylesheet %}
+    <link href="/media/css/about.css" rel="stylesheet">
+{% endblock stylesheet %}
+{% block after_navbar %}
+
+{% endblock after_navbar %}
+{% block content %}
+    <div class="col-lg-12">
+        <div class="page-header">
+            <h1>About KAIST International Summer School</h1>
+        </div>
+{#        background-image의 url 안의 내용을 원하는 이미지 파일의 경로로 채우시면 첨부된 이미지가 바뀝니다.#}
+        <div class="col-lg-12" style="height: 300px; margin-bottom: 10px; background-image: url(/media/image/wide.jpg); background-size: cover; background-position: center">
+
+        </div>
+        <h3>Welcome to KAIST International Summer School (KISS)</h3>
+{#        Welcome to KAIST International Summer School (KISS)의 첫번째 문단. p 태그 안에 내용을 넣으시면 됩니다.#}
+        <p>Since its establishment in 2007, KAIST International Summer School (KISS) has worked faithfully to serve as a hub for cultural and academic exchange between students from all over the world. Throughout the past eight years, KISS has evolved to be become an integral part of the summer experience at KAIST and unique opportunity for students, from Korea and abroad, to interlace a tapestry of academic exchange through creative teaching and learning.</p>
+{#        두번째 문단#}
+        <p>We invite you to come and experience innovative teaching and the blending of cultures at KAIST this summer at the 2017 KAIST International Summer School Program. This experience will most-definitely broaden your cultural understanding, deepen your intellectual capacity, and expand your network of friendships. We believe that 2017 KISS will provide a wonderful environment and program that will serve as a catalyst in formulating new friendships and pleasant memories that can be shared around the world.</p>
+        <h3>Mission Statement</h3>
+        <p>The mission of KAIST International Summer School (KISS) is:</p>
+{#        mission statement 리스트를 각 li 태그로 만들어주시면 됩니다. 수정의 경우에는 태그 안을 고치면 됩니다.#}
+        <ul>
+            <li>to invite excellent students from around the world and enjoy summer</li>
+            <li>to broaden participants’ cultural perspectives and intellectual horizon. </li>
+            <li>to build lifelong relationships with students from different backgrounds</li>
+        </ul>
+    </div>
+{% endblock content %}
+{% block script %}
+    <script type="text/javascript">
+    </script>
+{% endblock script %}

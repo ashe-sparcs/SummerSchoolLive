@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+{% block title %}
+    KAIST Summer School Gallery
+{% endblock title %}
+{% block stylesheet %}
+    <link href="/media/css/faq.css" rel="stylesheet">
+{% endblock stylesheet %}
+{% block after_navbar %}
+
+{% endblock after_navbar %}
+{% block content %}
+    <div class="col-lg-12">
+        <div class="page-header">
+            <div class="row">
+                <div class="col-lg-6">
+                    <h1>FAQ</h1>
+                </div>
+                <div class="col-lg-6 faq-search">
+                    <br>
+                    <div class="input-group inner-addon left-addon" id="adv-search">
+                        <i class="glyphicon glyphicon-search"></i>
+                        <input id="faq-search" onkeyup="faqSearch()" type="text" class="form-control" placeholder="Search for title and content" />
+{#                        <div class="input-group-btn">#}
+{#                            <div class="btn-group" role="group">#}
+{#                                <button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>#}
+{#                            </div>#}
+{#                        </div>#}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="faq-group" class="list-group">
+          {% for q in faq %}
+              <a href="#" class="list-group-item">
+                  <h4>Q{{ q.number }}. {{ q.question }}</h4>
+                  <p class="hidden">A. {{ q.answer|linebreaksbr }}</p>
+              </a>
+          {% endfor %}
+        </div>
+    </div>
+{% endblock content %}
+{% block script %}
+    <script type="text/javascript">
+        $('a.list-group-item').click( function(e) {e.preventDefault(); $(this).children("p").toggleClass('hidden'); return false; } );
+        function faqSearch() {
+            // Declare variables
+            var input, filter, ul, li, a, i;
+            input = document.getElementById('faq-search');
+            filter = input.value.toUpperCase();
+            ul = document.getElementById("faq-group");
+            li = ul.getElementsByTagName('a');
+
+            // Loop through all list items, and hide those who don't match the search query
+            for (i = 0; i < li.length; i++) {
+                a = li[i].getElementsByTagName("h4")[0];
+                b = li[i].getElementsByTagName("p")[0];
+                if (a.innerHTML.toUpperCase().indexOf(filter) > -1 || b.innerHTML.toUpperCase().indexOf(filter) > -1) {
+                    li[i].style.display = "";
+                } else {
+                    li[i].style.display = "none";
+                }
+            }
+        }
+    </script>
+{% endblock script %}

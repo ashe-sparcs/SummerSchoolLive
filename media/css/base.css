@@ -1,0 +1,173 @@
+/* GLOBAL STYLES
+-------------------------------------------------- */
+/* Padding below the footer and lighter body text */
+
+body {
+  padding-top: 0px;
+  padding-bottom: 40px;
+  /*color 의 값을 변경하면 일반 작은 글씨의 색이 바뀝니다.*/
+  color: #5a5a5a;
+}
+
+.page-header > h1 {
+  /*페이지 가장 큰 제목의 폰트 및 색 변경. 주석 해제하고 작성하면 됩니다.*/
+  /*font-family: ;*/
+  /*color: ;*/
+}
+.row > .col-lg-12 > h3 {
+  /*페이지 두번째로 큰 제목의 폰트 및 색 변경.*/
+  /*color: black;*/
+}
+.row > .col-lg-12 > h4 {
+  /*페이지 세번째로 큰 제목의 폰트 및 색 변경.*/
+  /*color: black;*/
+}
+.row > .col-lg-12 > h5 {
+  /*페이지 네번째로 큰 제목의 폰트 및 색 변경.*/
+  /*color: black;*/
+}
+
+.row > .col-lg-12 > ul > li {
+  /*리스트의 폰트 변경*/
+}
+.row > .col-lg-7 > h3 {
+  /*페이지 두번째로 큰 제목의 폰트 및 색 변경.*/
+  /*color: black;*/
+}
+.row > .col-lg-7 > h4 {
+  /*페이지 세번째로 큰 제목의 폰트 및 색 변경.*/
+  /*color: black;*/
+}
+.row > .col-lg-7 > h5 {
+  /*페이지 네번째로 큰 제목의 폰트 및 색 변경.*/
+  /*color: black;*/
+}
+
+.row > .col-lg-7 > ul > li {
+  /*리스트의 폰트 변경*/
+}
+th {
+  /*테이블 헤더의 폰트 변경*/
+  /*color: red;*/
+}
+td {
+  /*테이블 내용의 폰트 변경*/
+  /*color: pink;*/
+}
+
+
+/* CUSTOMIZE THE NAVBAR
+-------------------------------------------------- */
+/* Special class on .container surrounding .navbar, used for positioning it into place. */
+.navbar-wrapper {
+  position: absolute;
+  top: 250px;
+  right: 0;
+  left: 0;
+  z-index: 3;
+}
+.navbar, .navbar-collapse, .navbar-toggle {
+  border: 0;
+}
+
+#sticky-navbar {
+  width: 100%;
+  /* background-color 의 rgb 값을 변경하면 탭의 바탕색이 바뀝니다. */
+  background-color: rgb(89, 180, 218);
+}
+.container.marketing {
+  margin-top: 270px;
+}
+.logo-image {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  right: 0;
+  left: 0;
+}
+.nav .open > a, .nav .open > a:hover, .nav .open > a:focus{
+  background-color: rgb(18, 122, 191);
+}
+
+/* Flip around the padding for proper display in narrow viewports */
+.navbar-wrapper > .container {
+  padding-right: 0;
+  padding-left: 0;
+}
+.navbar-wrapper .navbar {
+  padding-right: 15px;
+  padding-left: 15px;
+}
+.navbar-wrapper .navbar .container {
+  width: auto;
+}
+
+.nav > li > a:hover, .nav > li > a:focus {
+  /*여기를 바꾸면 탭에 마우스를 올렸을 때의 색이 바뀝니다.*/
+  background-color: rgb(18, 122, 191);
+}
+
+#navbar > ul > li > a {
+  /*탭의 글자 폰트를 바꾸는 부분*/
+  font-family: "Avenir Next";
+  color: white;
+}
+
+.dropdown-menu {
+  /*여기를 바꾸면 탭을 눌렀을 때 나오는 드롭다운의 바탕색이 바뀝니다.*/
+  background-color: rgb(18, 122, 191);
+  margin-top: 0;
+  border: 0;
+  padding-top: 0;
+  min-width: 100px;
+  width: 100%;
+  border-radius: 0;
+}
+
+#navbar > ul > .dropdown > ul > li > a {
+  /*드롭다운의 폰트를 바꾸는 부분*/
+  font-family: "Avenir Next";
+  color: white;
+}
+#facebook-icon:hover {
+  background-color: rgb(18, 122, 191);
+}
+/* MARKETING CONTENT
+-------------------------------------------------- */
+
+/* Center align the text within the three columns below the carousel */
+.marketing h2 {
+  font-weight: normal;
+}
+
+
+/* Featurettes
+------------------------- */
+
+.featurette-divider {
+  margin: 20px 0; /* Space out the Bootstrap <hr> more */
+}
+
+
+/* RESPONSIVE CSS
+-------------------------------------------------- */
+
+@media (min-width: 768px) {
+  /* Navbar positioning foo */
+  .navbar-wrapper {
+    top: 250px;
+  }
+  .navbar-wrapper .container {
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+  .navbar-wrapper .navbar {
+    padding-right: 0;
+    padding-left: 0;
+  }
+
+  /* The navbar becomes detached from the top, so we round the corners */
+  .navbar-wrapper .navbar {
+    border-radius: 4px;
+  }
+}

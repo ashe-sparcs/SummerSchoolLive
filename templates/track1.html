@@ -1,0 +1,158 @@
+{% extends 'base.html' %}
+{% block title %}
+    KAIST Summer School Track I
+{% endblock title %}
+{% block stylesheet %}
+    <link href="/media/css/track1.css" rel="stylesheet">
+{% endblock stylesheet %}
+{% block after_navbar %}
+
+{% endblock after_navbar %}
+{% block content %}
+    <div class="col-lg-12">
+        <div class="page-header">
+            <h1>Track 1: Course-oriented Program</h1>
+        </div>
+        <div class="col-lg-12" style="height: 300px; margin-bottom: 10px; background-image: url(/media/image/track.jpg); background-size: cover; background-position: center">
+
+        </div>
+        <h3><b>2017 KISS Track 1</b></h3>
+{#        2017 KISS Track 1의 첫번째 문단#}
+        <p>Students may select up two courses from the list below. Medium of instruction is English for all courses. This year, we are offering 5 courses that are based on Education 3.0 courses/materials that are different from traditional courses in that the class time will consist of interactive activities and discussions instead of lectures. This year, we have a special course that will be open to all KISS students: a 1 week course (1 credit) K-School course called "Understanding Startups"; an entrepreneurship class that will help students better understand business startups. </p>
+{#        두번째 문단#}
+        <p>The classes will begin in the week of July 3rd, 2017 to end in the week of July 28th, 2017. For more details on the important dates, please refer to the Application Procedure page.</p>
+        <br>
+        <h4>Eligibility & Target Group</h4>
+{#        Eligibility & Target Group의 첫번째 문단#}
+        <p>Undergraduate & graduate students from partner & non-partner universities. Applicants from institutions where the primary medium of instruction is not English are expected to submit English test score (TOEFL iBT: 80, IELTS: overall band 6.0, TOEIC: 800).</p>
+        <br>
+        <h4>Number of Credits</h4>
+{#        Number of Credits의 첫번째 문단#}
+        <p>Up to 6 credits (student may enroll in up to 2 courses: one course in the morning and one course in the afternoon)</p>
+        <br>
+        <h4>Tuition</h4>
+{#        Tuition 제목 하단의 리스트#}
+        <ul>
+            <li>KRW 1,200,000 for one course (3 credit)</li>
+            <li>KRW 2,400,000 for 2 courses (6 credit)</li>
+            <li>KRW 1,600,000 for 1 course + K-school course (4 credits)</li>
+            <li>Tuition fees may change in 2018</li>
+        </ul>
+{#        별표로 시작하는 주의사항#}
+        <p>* Exchange students nominated from partner institutions, particularly from partners with imbalance, will be exempted from paying tuition fees. For more information on exchange students, please contact us at summerschool@kaist.ac.kr.</p>
+        <br>
+        <h4>Course (Morning)</h4>
+{#        아침 코스의 시간대를 나타내는 리스트. b 태그 안의 글자를 수정하면 됩니다.#}
+        <ul>
+            <li><b>M, W: 9:00am - 12:00pm</b></li>
+            <li><b>Tu, Thu, Fri: 10:00am - 12:00pm</b></li>
+        </ul>
+        <table class="table">
+        <thead>
+            <tr>
+                <th>Course No.</th>
+                <th>Course Title</th>
+                <th>Credit</th>
+                <th>Professor</th>
+                <th>Syllabus</th>
+            </tr>
+        </thead>
+        <tbody>
+          {% for course in morning %}
+            <tr>
+                <td>{{ course.course_no }}</td>
+                <td>{{ course.course_title }}{% if course.is_edu_3 %}*{% endif %}</td>
+                <td>{{ course.credit }}</td>
+                <td>{{ course.professor }}</td>
+                <td><a href="/media/syllabus/{{ course.get_filename }}"><span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span></a></td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+      <br>
+      <h4>Course (Afternoon)</h4>
+{#        오후 코스의 시간대를 나타내는 리스트#}
+        <ul>
+            <li><b>M, W: 13:00 - 16:00</b></li>
+            <li><b>Tu, Thu, Fri: 13:00 - 15:00</b></li>
+        </ul>
+        <table class="table">
+        <thead>
+            <tr>
+                <th>Course No.</th>
+                <th>Course Title</th>
+                <th>Credit</th>
+                <th>Professor</th>
+                <th>Syllabus</th>
+            </tr>
+        </thead>
+        <tbody>
+          {% for course in afternoon %}
+            <tr>
+                <td>{{ course.course_no }}</td>
+                <td>{{ course.course_title }}{% if course.is_edu_3 %}*{% endif %}</td>
+                <td>{{ course.credit }}</td>
+                <td>{{ course.professor }}</td>
+                <td><a href="/media/syllabus/{{ course.get_filename }}"><span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span></a></td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+{#        당구장 표시로 시작하는 주의사항#}
+      <p>※ Courses with * mark are based on types of Education 3.0 materials.<br>※ Courses with less than 5 students will be cancelled and the students will be asked to choose a different course.</p>
+      <br>
+    <h4>K-School Course</h4>
+{#        케이스쿨 코스의 시간대를 나타내는 리스트#}
+        <ul>
+            <li><b>M-F : 9:00 - 12:00</b></li>
+            <li><b>Tu, Thu : 19:00 - 21:00</b></li>
+        </ul>
+        <table class="table">
+        <thead>
+            <tr>
+                <th>Course No.</th>
+                <th>Course Title</th>
+                <th>Credit</th>
+                <th>Professor</th>
+                <th>Syllabus</th>
+            </tr>
+        </thead>
+        <tbody>
+          {% for course in kschool %}
+            <tr>
+                <td>{{ course.course_no }}</td>
+                <td>{{ course.course_title }}{% if course.is_edu_3 %}*{% endif %}</td>
+                <td>{{ course.credit }}</td>
+                <td>{{ course.professor }}</td>
+                <td><a href="/media/syllabus/{{ course.get_filename }}"><span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span></a></td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+{#        당구장 표시 주의사항#}
+      <p>※ 1 week special course</p>
+        <br>
+    <h4>Description of Education 3.0 Courses</h4>
+    <h5>The Process</h5>
+{#    The process 의 첫 문단#}
+    <p>No formal lectures. The professor in charge assigns the topic each week. The professor provides pre-recorded lectures and reference materials via Internet. Students learn by listening to pre-recorded lectures delivered by the KAIST Education 3.0 professors, from reference materials available on the Internet, and by performing simple experiments.</p>
+{#    The process 의 두번째 문단#}
+    <p>Students communicate with the Education 3.0 Consulting Professors in other countries through the Internet and Skype when they have questions on the lecture materials. Students consult with the local KAIST faculty when they have questions after listening the pre-recorded lectures. Students formally get together with the faculty advisor and fellow students once a week to review what they have done.</p>
+    <h5>Benefits of Edu 3.0</h5>
+{#    Benefits of Edu 3.0 리스트. li 태그 안에 내용을 수정하면 됩니다.#}
+    <ul>
+        <li>Freedom in Learning – Students are no longer bound by a time and place for learning</li>
+        <li>Globalized Learning – Students are able to interact and have discussions with students from all over the world.</li>
+        <li>Small Group Learning – Discussions in small groups is said to be the best way of learning!</li>
+        <li>Integrated and Interactive Learning – No more traditional lectures. Learn through activities and interaction with your peers, TAs and professors.</li>
+    </ul>
+        <br>
+    <h4>Transferring Credits</h4>
+{#    Transferring Credits의 첫 문단#}
+    <p>A student's home university is mainly responsible for transferring KAIST academic credits. KAIST only provides information on the grading system, course syllabus, and the academic policy of the KISS. Therefore, you are advised to consult with the appropriate academic authorities at your home institution in advance using our course syllabus posted online.</p>
+    </div>
+{% endblock content %}
+{% block script %}
+    <script type="text/javascript">
+    </script>
+{% endblock script %}

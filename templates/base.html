@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="Home of SummerSchool Web Site">
+    <meta name="author" content="Jae Sung Kim">
+    <link rel="icon" href="/media/image/favicon.ico">
+
+    <title>{% block title %}Base Template{% endblock %}</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="/media/css/bootstrap_blue.css" rel="stylesheet">
+    <link href="/media/css/font-awesome.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Custom styles for this template -->
+    <link href="/media/css/base.css" type="text/css" rel="stylesheet">
+    {% block stylesheet %}{% endblock %}
+</head>
+<body>
+    <!-- LOGO IMAGE
+    ================================================== -->
+{#    <a href="/"><div class="logo-image" style="background-image: url(/media/image/logo.jpg); background-size: cover;"></div></a>#}
+    <a href="/"><img id="logo-image" class="logo-image" src="/media/image/logo.jpg"></a>
+    <!-- NAVBAR
+    ================================================== -->
+    <div hidden id="navigation-bar" class="navbar-wrapper" style='display: none;'>
+        <nav id="sticky-navbar" class="navbar navbar-inverse navbar-fixed-below-logo" style="border-radius: 0">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+              <ul class="nav nav-justified" style="width: 95%; display: inline-block;">
+                <li id="nav-about"><a href="/about">About</a></li>
+                <li id="nav-programs" class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Programs <span class="caret"></span></a>
+                  <ul class="dropdown-menu" role="menu">
+                    <li><a href="/track1">Track I</a></li>
+                    <li><a href="/track2">Track II</a></li>
+                  </ul>
+                </li>
+                <li id="nav-registration" class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Registration <span class="caret"></span></a>
+                  <ul class="dropdown-menu" role="menu">
+                    <li><a href="/dates">Important Date</a></li>
+                    <li><a href="https://io.kaist.ac.kr/mobi/summer_online.do">Apply Now</a></li>
+                  </ul>
+                </li>
+                <li id="nav-gallery" class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Photo Book<span class="caret"></span></a>
+                  <ul class="dropdown-menu" role="menu">
+                    <li><a href="/gallery/0/1/">All</a></li>
+                    <li><a href="/gallery/2016/1/">2016</a></li>
+                    <li><a href="/gallery/2015/1/">2015</a></li>
+                    <li><a href="/gallery/2014/1/">2014</a></li>
+                    <li><a href="/gallery/2013/1/">2013</a></li>
+                    <li><a href="/gallery/2012/1/">2012</a></li>
+                  </ul>
+                </li>
+                <li id="nav-faq"><a href="/faq">FAQ</a></li>
+                <li id="nav-review"><a href="/review/page/1/">Testimonials</a></li>
+                <li id="nav-contact"><a href="/contact">Contact Us</a></li>
+              </ul>
+              <ul class="nav navbar-nav navbar-right">
+                  <li><a id="facebook-icon" href="https://www.facebook.com/summeratkaist/"><i class="fa fa-facebook-official fa-lg" aria-hidden="true"></i></a></li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+{#      </div>#}
+    </div>
+    {% block after_navbar %}
+    {% endblock %}
+    <!-- Wrap the rest of the page in another container to center all the content. -->
+    <div class="container marketing">
+      <div class="row" style="width: 1000px; margin: auto;">
+          {% block content %}
+          {% endblock %}
+      </div>
+      <hr class="featurette-divider">
+      <!-- FOOTER -->
+      <footer>
+        <!--
+        <p class="pull-right"><a href="#">Back to top</a></p>
+        <p>&copy; 2014 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+        -->
+              <div class="row text-center">
+                <div class="col-lg-12 text-center">
+                  <div class="col-md-4">
+                    <ul class="nav nav-pills nav-stacked">
+                      <li><a href="https://io.kaist.ac.kr/index.do">KAIST International Office</a></li>
+                    </ul>
+                  </div>
+                  <div class="col-md-4">
+                    <ul class="nav nav-pills nav-stacked">
+                      <li><a href="http://www.kaist.ac.kr/html/kr/index.html">KAIST Homepage</a></li>
+                    </ul>
+                  </div>
+                  <div class="col-md-4">
+                    <ul class="nav nav-pills nav-stacked">
+                      <li><a href="http://www.daejeon.go.kr/dre/index.do">About Daejeon</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <hr class="featurette-divider">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <ul class="nav nav-pills nav-justified">
+                            <li><a href="/">© 2017 KAIST International Relations Team</a></li>
+                        </ul>
+                    </div>
+                </div>
+      </footer>
+    </div><!-- /.container -->
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="/media/js/jquery-3.1.1.min.js"></script>
+    <script src="/media/js/bootstrap.min.js"></script>
+    {% block script %}
+    {% endblock %}
+    <script type="text/javascript">
+      var header = $("#sticky-navbar");
+      window.onscroll = nav;
+      function nav() {
+          if (window.pageYOffset > 300) {
+              header.addClass('navbar-fixed-top');
+          } else {
+              header.removeClass('navbar-fixed-top');
+          }
+      }
+      $('ul.nav li.dropdown').hover(function() {
+          $(this).find('.dropdown-menu').stop(true, true).delay(10).fadeIn(10);
+      }, function() {
+          $(this).find('.dropdown-menu').stop(true, true).delay(10).fadeOut(10);
+      });
+	  $(document).ready(function () {
+		  var logo_height = $(window).width() * 532 / 2998;
+	      $('#navigation-bar').css('top', logo_height + 'px');
+	      $('#navigation-bar').show();
+		  $('.container.marketing').css('margin-top', logo_height + 70 + 'px');
+		  $( window ).resize(function() {
+		  	var logo_height_changed = $(window).width() * 532 / 2998;
+			$('#navigation-bar').css('top', logo_height_changed + 'px');
+			$('.container.marketing').css('margin-top', logo_height_changed + 70 + 'px');
+		  });
+	  });	  
+    </script>
+</body>
+</html>
