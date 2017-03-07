@@ -9,6 +9,7 @@ class Review(models.Model):
     title = models.CharField(max_length=100)
     year = models.IntegerField()
     content = models.TextField()
+    is_main = models.BooleanField(default=False)
 
 
 class Image(models.Model):

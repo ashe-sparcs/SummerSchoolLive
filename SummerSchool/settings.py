@@ -24,7 +24,7 @@ SECRET_KEY = 'check out local settings file'
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['35.161.59.173', 'ksummer.kaist.ac.kr', '127.0.0.1']
 

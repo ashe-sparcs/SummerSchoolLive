@@ -59,8 +59,12 @@
                 {% endfor %}
               </div>
               <div class="col-lg-12" style="padding: 0">
-                  <div class="col-lg-9"><a href="/review/one/{{ review.id }}"><h4>{{ review.title }}</h4></a></div>
-                  <div class="col-lg-3 text-right" style="margin-top: 5px"><h6>{{ review.student }}</h6></div>
+                  {% if review is None %}
+					  <div class="col-lg-12"><h4>No main testimonials available</h4></div>
+                  {% else %}
+                      <div class="col-lg-9"><a href="/review/one/{{ review.id }}"><h4>{{ review.title }}</h4></a></div>
+                      <div class="col-lg-3 text-right" style="margin-top: 5px"><h6>{{ review.student }}</h6></div>
+                  {% endif %}
               </div>
             </div>
           </div>

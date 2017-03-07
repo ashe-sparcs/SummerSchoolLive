@@ -85,7 +85,7 @@ td {
   right: 0;
   left: 0;
 }
-.nav .open > a, .nav .open > a:hover, .nav .open > a:focus{
+.nav .open > a, .nav .open > a:not(.useful-site):hover, .nav .open > a:not(.useful-site):focus{
   background-color: rgb(18, 122, 191);
 }
 
@@ -102,7 +102,7 @@ td {
   width: auto;
 }
 
-.nav > li > a:hover, .nav > li > a:focus {
+#navbar > .nav > li > a:hover, #navbar > .nav > li > a:focus {
   /*여기를 바꾸면 탭에 마우스를 올렸을 때의 색이 바뀝니다.*/
   background-color: rgb(18, 122, 191);
 }
