@@ -54,13 +54,13 @@
               <div class="row gallery">
                 {% for filename in filename_list %}
                     <div class="col-lg-6" style="padding: 0;">
-                      <div class="thumbnail" style="background-image: url(/media/image/{{ filename }})"></div>
+                      <div class="thumbnail" style="background-image: url(/media/review_image/{{ filename }})"></div>
                     </div>
                 {% endfor %}
               </div>
               <div class="col-lg-12" style="padding: 0">
-                  <div class="col-lg-7"><a href="/review/one/{{ review.id }}"><h4>{{ review.title }}</h4></a></div>
-                  <div class="col-lg-5 text-right" style="margin-top: 5px"><h6>By {{ review.student }}</h6></div>
+                  <div class="col-lg-9"><a href="/review/one/{{ review.id }}"><h4>{{ review.title }}</h4></a></div>
+                  <div class="col-lg-3 text-right" style="margin-top: 5px"><h6>{{ review.student }}</h6></div>
               </div>
             </div>
           </div>

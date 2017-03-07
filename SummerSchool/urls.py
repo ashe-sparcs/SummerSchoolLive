@@ -30,4 +30,6 @@ urlpatterns = [
     url(r'^dates', views.dates),
     url(r'^track1', views.track1),
     url(r'^track2', views.track2),
+	#[view function name]은 views.py에 새로 작성한 함수 이름과 같아야 합니다.
+    #url(r'^[address]', views.[view function name]),
 ]
