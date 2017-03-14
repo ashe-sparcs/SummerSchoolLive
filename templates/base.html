@@ -16,10 +16,10 @@
     <link href="/media/css/font-awesome.css" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
+    <!--[if lt IE 9]><!-->
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
+    <!--<![endif]-->
 
     <!-- Custom styles for this template -->
     <link href="/media/css/base.css" type="text/css" rel="stylesheet">
@@ -152,7 +152,9 @@
           $(this).find('.dropdown-menu').stop(true, true).delay(10).fadeOut(10);
       });
 	  $(document).ready(function () {
-		  var logo_height = $(window).width() * 532 / 2998;
+		  // window width에 로고 이미지 파일의 가로 세로 비율을 곱해야 합니다.
+		  // var logo_height = $(window).width() * 세로픽셀 / 가로픽셀;
+		  var logo_height = $(window).width() * 184 / 1240;
 	      $('#navigation-bar').css('top', logo_height + 'px');
 	      $('#navigation-bar').show();
 		  $('.container.marketing').css('margin-top', logo_height + 70 + 'px');
