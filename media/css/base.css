@@ -9,6 +9,7 @@ body {
   color: #5a5a5a;
 }
 
+
 .page-header > h1 {
   /*페이지 가장 큰 제목의 폰트 및 색 변경. 주석 해제하고 작성하면 됩니다.*/
   /*font-family: ;*/
@@ -107,9 +108,17 @@ td {
   background-color: rgb(18, 122, 191);
 }
 
+@font-face {
+	font-family: "MyAvenir";
+	src: 
+		url('/media/fonts/avenir-next-regular.ttf') format('truetype'),
+		url('/media/fonts/avenir-next-regular.woff') format('woff'),
+		url('/media/fonts/avenir-next-regular,eot');
+}
+
 #navbar > ul > li > a {
   /*탭의 글자 폰트를 바꾸는 부분*/
-  font-family: "Avenir Next";
+  font-family: "Avenir Next", "MyAvenir";
   color: white;
 }
 
@@ -126,7 +135,7 @@ td {
 
 #navbar > ul > .dropdown > ul > li > a {
   /*드롭다운의 폰트를 바꾸는 부분*/
-  font-family: "Avenir Next";
+  font-family: "Avenir Next", "MyAvenir";
   color: white;
 }
 #facebook-icon:hover {
