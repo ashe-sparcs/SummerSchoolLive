@@ -159,7 +159,8 @@
 	      $('#navigation-bar').show();
 		  $('.container.marketing').css('margin-top', logo_height + 70 + 'px');
 		  $( window ).resize(function() {
-		  	var logo_height_changed = $(window).width() * 532 / 2998;
+		  // var logo_height_changed = $(window).width() * 세로픽셀 / 가로픽셀;
+		  	var logo_height_changed = $(window).width() * 184 / 1240;
 			$('#navigation-bar').css('top', logo_height_changed + 'px');
 			$('.container.marketing').css('margin-top', logo_height_changed + 70 + 'px');
 		  });
